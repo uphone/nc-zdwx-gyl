@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+ 
+<!DOCTYPE beans PUBLIC ".//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--新增按钮-->
+    <bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+	    <property name="actionContainer" ref="actionsOfList" />
+	    <property name="actionType" value="notedit" />
+	    <property name="target" ref="queryAction" />
+	    <property name="pos" value="after" />
+	    <property name="action" ref="excelImportAction" /> 
+    </bean>
+    <!--新增按钮-->
+    <bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+	    <property name="actionContainer" ref="actionsOfCard" />
+	    <property name="actionType" value="notedit" />
+	    <property name="target" ref="queryAction" />
+	    <property name="pos" value="after" />
+	    <property name="action" ref="excelImportAction" /> 
+    </bean>
+    <!--测试-->
+    <bean id="excelImportAction" class="nc.ui.ct.purdaily.action.ExcelImportAction">
+       <property name="model" ref="ManageAppModel" />
+		<property name="code" value="excelImport"/>
+		<property name="editor" ref="billFormEditor" />
+    </bean>
+    
+</beans>
