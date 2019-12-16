@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="gb2312"?>
+<formula-array>
+  <formula>
+    <customType>9</customType>
+    <functionName>getMaterialSum</functionName>
+    <functionClass>nc.vo.pu.m20.pub.PrayBillSumMaterial</functionClass>
+  </formula>
+</formula-array>
