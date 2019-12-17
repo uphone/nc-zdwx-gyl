@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="gb2312"?>
+<formula-array>
+  <formula>
+    <customType>9</customType>
+    <functionName>getOnlHand</functionName>
+    <functionClass>nc.vo.pu.m20.pub.PrayBillOnHand</functionClass>
+  </formula>
+</formula-array>

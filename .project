@@ -11,14 +11,14 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>nc.uap.mde.ModuleBuilder</name>
+			<name>com.yonyou.studio.udt.core.builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>nc.uap.mde.ModuleProjectNature</nature>
-		<nature>nc.uap.mde.BizCompProjectNature</nature>
+		<nature>com.yonyou.studio.ria.core.BizCompProjectNature</nature>
+		<nature>com.yonyou.studio.udt.core.nature</nature>
 	</natures>
 </projectDescription>
