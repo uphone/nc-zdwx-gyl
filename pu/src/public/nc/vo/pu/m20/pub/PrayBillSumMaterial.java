@@ -17,6 +17,7 @@ public class PrayBillSumMaterial extends NcInnerFunction {
 		this.functionType = 9;
 	}
 	
+	
 	@Override
 	public Object function(List param) throws ParseException {
 		// TODO 自动生成的方法存根
@@ -41,6 +42,6 @@ public class PrayBillSumMaterial extends NcInnerFunction {
 	@Override
 	public String getFunctionDesc() {
 		// TODO 自动生成的方法存根
-		return "getMaterialSum(pk_material,pk_org)";
+		return "getMaterialSum(pk_material,pk_org) 已提交的历史请购数量，第一个参数：物料编码，第二个参数：pk_org";
 	}
 }

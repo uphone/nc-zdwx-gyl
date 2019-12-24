@@ -75,6 +75,6 @@ public class PrayBillOnHand extends NcInnerFunction {
 	@Override
 	public String getFunctionDesc() {
 		// TODO 自动生成的方法存根
-		return "getOnlHand(pk_material,pk_org)";
+		return "getOnlHand(pk_material,pk_org) ,可用库存,第一个参数:物料编码，第二个参数：pk_org";
 	}
 }
