@@ -101,6 +101,7 @@
 	 
 	<!-- 分割 -->
 	<bean id="separatorAction" class="nc.funcnode.ui.action.SeparatorAction" />
+	<!-- add psl start  -->
 	<!--导入-->
     <bean id="excelImportAction" class="nc.ui.ct.purdaily.action.ExcelImportAction">
        <property name="model" ref="ManageAppModel" />
@@ -108,6 +109,7 @@
 		<property name="editor" ref="billFormEditor" />
 		<property name="actionName" value="EXCELIMPORT" />
     </bean>
+    <!-- add psl end  -->
 	<!-- 自制 -->
 	<bean id="addAction" class="nc.ui.ct.purdaily.action.PuAddAction">
 		<property name="cardForm" ref="billFormEditor" />
