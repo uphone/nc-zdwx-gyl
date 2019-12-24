@@ -90,6 +90,7 @@ public class ExcelImportAction extends NCAction {
 		list.remove(0);
 		CtPuBVO [] bodys=new CtPuBVO[list.size()];
 		int rownum=0;
+		editor.getBillCardPanel().getBillModel().clearBodyData();
 		for(int i=0;i<list.size();i++){
 			rownum+=10;
 			String valStr=list.get(i).substring(1,list.get(i).length());
@@ -198,12 +199,14 @@ public class ExcelImportAction extends NCAction {
 			pub.setPk_srcmaterial(map.get("map"));
 			pub.setVchangerate("1.00/1.00"); 
 			pub.setVqtunitrate("1.00/1.00");
+			Integer rowCount=editor.getBillCardPanel().getBillModel().getRowCount();
 			bodys[i]=pub;
 		}
 //		editor.getBillCardPanel().getBillModel().addRowAttributeObject(0, "vbdef19", "11");
 //		editor.getBillCardPanel().getBillModel().addLine();
-//		editor.getBillCardPanel().getBillModel().setImportBodyDataVO(p);
 		editor.getBillCardPanel().getBillModel().setBodyDataVO(bodys);
+//		editor.getBillCardPanel().getBillModel().setImportBodyDataVOPu(bodys);
+		System.out.println("12");
 	}
 
 	public BillManageModel getModel() {
