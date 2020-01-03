@@ -32,9 +32,11 @@ public class PrayBillOnHand extends NcInnerFunction {
 		List<Map<String,Object>>  list =null;
 		try {
 			String materialCode = (String) param.get(0);
+			if(materialCode == null || "".equals(materialCode.trim())) return "";
 			String pk_org=(String) param.get(1);
 			String materialtypeSql="select materialtype from bd_material where code='"+materialCode+"' and pk_org='"+pk_org+"'";
 			Map<String,Object> typeMap=(Map<String, Object>) bs.executeQuery(materialtypeSql, new MapProcessor());
+			if(typeMap == null || typeMap.get("materialtype") == null) return "";
 			String type=typeMap.get("materialtype").toString();
 			String sql =" select  a.pk_stordoc,b.pk_material from  bd_materialstock a ,bd_material b where a.pk_material=b.pk_material and b.materialtype='"+type+"' and a.pk_org='"+pk_org+"'";
 			list=(List<Map<String, Object>>) bs.executeQuery(sql, new MapListProcessor() );
@@ -66,8 +68,6 @@ public class PrayBillOnHand extends NcInnerFunction {
 			}
 			return "无";
 		} catch (BusinessException e) {
-			// TODO 自动生成的 catch 块
-			e.printStackTrace();
 			return "-1";
 		}
 	}

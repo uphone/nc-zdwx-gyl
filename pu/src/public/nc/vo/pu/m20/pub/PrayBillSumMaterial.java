@@ -26,15 +26,14 @@ public class PrayBillSumMaterial extends NcInnerFunction {
 		}
 		IUAPQueryBS bs = NCLocator.getInstance().lookup(IUAPQueryBS.class);
 		String pk_material = (String) param.get(0);
+		if(pk_material == null || "".equals(pk_material.trim())) return null;
 		String pk_org=(String) param.get(1);
-		String sql ="select sum(nastnum) as num from  po_praybill a,po_praybill_b b,bd_material c  where a.pk_praybill=b.pk_praybill and c. pk_material = b.pk_material and c.code='"+pk_material+"' and a.fbillstatus in (1,3) and a.pk_org='"+pk_org+"'";
+		String sql ="select sum(b.nnum) as num from  po_praybill a,po_praybill_b b,bd_material c  where a.dr=0 and b.dr=0 and b.nnum>0 and a.pk_praybill=b.pk_praybill and c. pk_material = b.pk_material and c.code='"+pk_material+"' and a.fbillstatus<>0 and a.pk_org='"+pk_org+"'";
 		Map<String,Object>  map =null;
 		try {
 			map=(Map<String, Object>) bs.executeQuery(sql, new MapProcessor());
 			return map.get("num");
 		} catch (BusinessException e) {
-			// TODO 自动生成的 catch 块
-			e.printStackTrace();
 			return "0";
 		}
 	}

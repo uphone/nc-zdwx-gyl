@@ -77,6 +77,9 @@ public class PurdailyValidateListener implements IBusinessListener {
 //		UFDouble lastS = last.getNmny().sub(last.getNaccumpaymny() == null ? UFDouble.ZERO_DBL : last.getNaccumpaymny());
 //		UFDouble lastA = lastS.add(d.multiply(lastR).div(100));
 		UFDouble lastA = ctMny.sub(preTotal);
+		if(lastA.doubleValue() < 0) {
+			throw new BusinessException("付款计划金额调整失败，请检查。");
+		}
 		last.setNtotalorigmny(ctMny);
 		last.setNmny(lastA);
 		last.setNorigmny(lastA);
