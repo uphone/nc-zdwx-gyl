@@ -41,7 +41,7 @@ public class PurdailyValidateListener implements IBusinessListener {
 		CtPuVO ctPuVO = aggCtPuVO.getParentVO();
 		UFDouble ctMny = ctPuVO.getNtotaltaxmny();
 		if(payPlanTotal.sub(ctMny).doubleValue() == 0) return;
-		UFDouble d = ctMny.sub(payPlanTotal);
+		UFDouble d = ctMny.sub(payPlanTotal); // 合同总额与付款计划总额的差额（调整前后差额）
 		PayPlanVO last = payPlanVOs[payPlanVOs.length-1];
 		UFDouble lastR = last.getNrate();
 		
@@ -53,8 +53,8 @@ public class PurdailyValidateListener implements IBusinessListener {
 			payPlanVO.setNtotalorigmny(ctMny);
 			UFDouble nmny = payPlanVO.getNmny();
 			UFDouble naccumpaymny = payPlanVO.getNaccumpaymny();
-			UFDouble s = nmny.sub(naccumpaymny == null ? UFDouble.ZERO_DBL : naccumpaymny);
-			UFDouble r = payPlanVO.getNrate();
+			UFDouble s = nmny.sub(naccumpaymny == null ? UFDouble.ZERO_DBL : naccumpaymny); // 付款计划中的剩余付款金额
+			UFDouble r = payPlanVO.getNrate(); // 付款比例
 			if(s.doubleValue()==0) {
 				preTotal = preTotal.add(nmny);
 				lastR = lastR.add(r);
