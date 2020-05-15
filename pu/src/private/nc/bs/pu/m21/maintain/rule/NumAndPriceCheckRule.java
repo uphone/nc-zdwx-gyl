@@ -53,7 +53,7 @@ public class NumAndPriceCheckRule implements IRule<OrderVO> {
   private String check(OrderVO vo) {
     OrderItemVO[] items = vo.getBVO();
     StringBuilder sb = new StringBuilder();
-    boolean isReturn = UFBoolean.TRUE.equals(vo.getHVO().getBreturn());
+//    boolean isReturn = UFBoolean.TRUE.equals(vo.getHVO().getBreturn());
     for (OrderItemVO item : items) {
     	if(item.getStatus()==3){
     		continue;
@@ -61,16 +61,17 @@ public class NumAndPriceCheckRule implements IRule<OrderVO> {
       // 记住当前buffer的大小，如果本次循环有异常，会在这个位置插入 第{0}行：
       int offset = sb.length();
 
-      if (isReturn && UFDouble.ZERO_DBL.compareTo(item.getNnum()) < 0) {
-        sb.append(
-            nc.vo.ml.NCLangRes4VoTransl.getNCLangRes().getStrByID("4004030_0",
-                "04004030-0128")/* @res "[退货订单数量不能为正]" */).append(",");
-      }
-      else if (!isReturn && UFDouble.ZERO_DBL.compareTo(item.getNnum()) > 0) {
-        sb.append(
-            nc.vo.ml.NCLangRes4VoTransl.getNCLangRes().getStrByID("4004030_0",
-                "04004030-0129")/* @res "[订货订单数量不能为负]" */).append(",");
-      }
+      // 取消这里的校验
+//      if (isReturn && UFDouble.ZERO_DBL.compareTo(item.getNnum()) < 0) {
+//        sb.append(
+//            nc.vo.ml.NCLangRes4VoTransl.getNCLangRes().getStrByID("4004030_0",
+//                "04004030-0128")/* @res "[退货订单数量不能为正]" */).append(",");
+//      }
+//      else if (!isReturn && UFDouble.ZERO_DBL.compareTo(item.getNnum()) > 0) {
+//        sb.append(
+//            nc.vo.ml.NCLangRes4VoTransl.getNCLangRes().getStrByID("4004030_0",
+//                "04004030-0129")/* @res "[订货订单数量不能为负]" */).append(",");
+//      }
       int sign =
           UFDouble.ZERO_DBL
               .compareTo(item.getNorigtaxprice() == null ? UFDouble.ZERO_DBL

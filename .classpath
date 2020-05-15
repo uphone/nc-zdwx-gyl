@@ -11,6 +11,7 @@
 	<classpathentry kind="src" output="ct/classes" path="ct/resources"/>
 	<classpathentry kind="src" output="ct/classes" path="ct/src/test"/>
 	<classpathentry kind="src" output="uapbd/META-INF/classes" path="uapbd/src/private"/>
+	<classpathentry kind="src" output="ic/classes" path="ic/src/client"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="com.yonyou.studio.udt.core.container/Ant_Library"/>
 	<classpathentry kind="con" path="com.yonyou.studio.udt.core.container/Product_Common_Library"/>
