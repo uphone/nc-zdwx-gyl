@@ -2205,7 +2205,7 @@ private Map getManagedMap3(){  Map map = new HashMap();  map.put("pk_ct_pu_b",ge
 
 private List getManagedList38(){  List list = new ArrayList();  list.add("pk_material");  list.add("pk_marbasclass");  list.add("cunitid");  list.add("nnum");  list.add("nqtorigprice");  list.add("nqtorigtaxprice");  list.add("norigtaxmny");  return list;}
 
-private List getManagedList39(){  List list = new ArrayList();  list.add("vtermcode");  list.add("vtermcontent");  list.add("votherinfo");  list.add("vmemo");  return list;}
+private List getManagedList39(){  List list = new ArrayList();  list.add("vtermcode");  list.add("vtermcontent");  list.add("votherinfo");  list.add("vmemo");list.add("vbdef1");list.add("vbdef2");list.add("vbdef3");  return list;}
 
 private List getManagedList40(){  List list = new ArrayList();  list.add("vexpcode");  list.add("vexpsum");  list.add("vmemo");  return list;}
 
